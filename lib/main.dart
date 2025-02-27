@@ -5,8 +5,8 @@
 // 4- create class "api manager" to collect in it all methods for api
 // 5- display your data
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_project_ff/home_screen/news_details/news_details_screen.dart';
 import 'package:news_project_ff/theme_data.dart';
 
 import 'home_screen/home_screen.dart';
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'News App',
       routes: {
         HomeScreen.routeName: (context) => HomeScreen()
+        ,NewsDetailsScreen.routeName: (context) => NewsDetailsScreen()
       },
     );
   }

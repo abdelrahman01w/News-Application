@@ -2,12 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_project_ff/home_screen/category/category_details.dart';
 import 'package:news_project_ff/home_screen/category/category_fragment.dart';
+import 'package:news_project_ff/home_screen/search/search_tab.dart';
 import 'package:news_project_ff/home_screen/setting/settings.dart';
-import 'package:news_project_ff/home_screen/tabs/tab_widget.dart';
 import 'package:news_project_ff/model/category.dart';
-
 import '../app_colors.dart';
-import '../model/api_manager.dart';
 import 'drawer/home_drawer.dart';
 
 
@@ -44,6 +42,11 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedCategory == null ?
               'News App' :selectedCategory!.id
               ,style: Theme.of(context).textTheme.titleLarge,),
+          actions: [
+            IconButton(onPressed: (){
+              showSearch(context: context, delegate: SearchTap());
+            }, icon: Icon(Icons.search))
+          ],
           ),
 
           body:selectedSideMenuItem ==HomeDrawer.setting ?
@@ -63,7 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   });
   }
-
   int selectedSideMenuItem = HomeDrawer.categories;
   void onSideMenuItemClick(int newSideMenuItem){
     selectedSideMenuItem=newSideMenuItem;

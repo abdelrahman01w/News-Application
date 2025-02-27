@@ -27,10 +27,12 @@ https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
 /*
 https://newsapi.org/v2/everything?q=bitcoin&apiKey=64e4eec66502400b8fc4719e60c961ea
  */
-  static Future<NewsResponse?> getNewsBySourceId(String sourceId)async{
+  static Future<NewsResponse?> getNewsBySourceId(
+      {String? sourceId, String? quary})async{
     Uri url = Uri.https(ApiConstant.baseUrl ,ApiConstant.sourceNews , {
       'apiKey': ApiConstant.apiKey,
       'sources':sourceId
+      ,'q':quary
     });
     var response  = await http.get(url);
     try{

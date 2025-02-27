@@ -10,7 +10,7 @@ class NewsWidgetViewModel extends ChangeNotifier{
     errorMessage=null;
     notifyListeners();
     try{
-      var response = await ApiManager.getNewsBySourceId(categoryId);
+      var response = await ApiManager.getNewsBySourceId(sourceId: categoryId);
       if(response?.status == 'null'){
         errorMessage =response!.message;
       }else{
