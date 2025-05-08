@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_project_ff/home_screen/category/category_item.dart';
 import 'package:news_project_ff/model/category.dart';
